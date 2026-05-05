@@ -1,15 +1,14 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
+import { ScreenQuad } from "@react-three/drei";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { prefersReducedMotion } from "@/lib/motion";
 
 const vertexShader = /* glsl */ `
-  varying vec2 vUv;
   void main() {
-    vUv = uv;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    gl_Position = vec4(position.xy, 0.0, 1.0);
   }
 `;
 
@@ -17,12 +16,9 @@ const fragmentShader = /* glsl */ `
   precision highp float;
 
   uniform float uTime;
-  uniform float uIntensity;
   uniform vec2  uResolution;
   uniform vec3  uBg;
   uniform vec3  uAccent;
-
-  varying vec2 vUv;
 
   float hash(vec2 p) {
     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
@@ -51,33 +47,42 @@ const fragmentShader = /* glsl */ `
   }
 
   void main() {
-    vec2 uv = vUv;
+    // gl_FragCoord est garanti par WebGL : pixel coords (0..width, 0..height).
+    // On ne depend plus de varying vUv (qui semblait casse sur le driver de Mattias).
+    vec2 uv = gl_FragCoord.xy / uResolution;
     float aspect = uResolution.x / max(uResolution.y, 1.0);
     vec2 p = vec2(uv.x * aspect, uv.y);
 
     float t = uTime * 0.04;
     float n = fbm(p * 2.5 + vec2(t, -t * 0.6));
 
-    float vignette = smoothstep(1.4, 0.2, distance(uv, vec2(0.5, 0.5)));
+    // Base : charcoal a peine teinte (presque invisible, juste un soupcon).
+    vec3 col = mix(uBg, uAccent, 0.03);
 
-    vec3 col = uBg;
-    float accentMask = smoothstep(0.55, 0.92, n) * uIntensity * 0.18;
-    col = mix(col, uAccent, accentMask * vignette);
+    // Nuages accent : seuil un peu plus serre, intensite moderee.
+    float accentMask = smoothstep(0.4, 0.78, n) * 0.32;
+    col = mix(col, uAccent, accentMask);
 
-    float grain = (hash(uv * uResolution + uTime) - 0.5) * 0.025;
+    // Vignette : assombrit les bords (centre garde sa presence).
+    float dist = distance(uv, vec2(0.5, 0.5));
+    float vignette = 1.0 - smoothstep(0.3, 0.95, dist);
+    col = mix(col * 0.65, col, vignette);
+
+    // Grain.
+    float grain = (hash(uv * uResolution + uTime * 60.0) - 0.5) * 0.025;
     col += grain;
 
     gl_FragColor = vec4(col, 1.0);
   }
 `;
 
-function ShaderPlane() {
+function HeroShader() {
   const matRef = useRef<THREE.ShaderMaterial>(null);
+  const timeRef = useRef(0);
 
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
-      uIntensity: { value: 1.0 },
       uResolution: { value: new THREE.Vector2(1, 1) },
       uBg: { value: new THREE.Color("#0a0a0b") },
       uAccent: { value: new THREE.Color("#ff4d2e") },
@@ -85,33 +90,31 @@ function ShaderPlane() {
     [],
   );
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
+    timeRef.current += delta;
     const m = matRef.current;
     if (!m) return;
-    m.uniforms.uTime.value = state.clock.elapsedTime;
+    m.uniforms.uTime.value = timeRef.current;
     m.uniforms.uResolution.value.set(state.size.width, state.size.height);
   });
 
   return (
-    <mesh>
-      <planeGeometry args={[2, 2]} />
+    <ScreenQuad>
       <shaderMaterial
         ref={matRef}
         uniforms={uniforms}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
       />
-    </mesh>
+    </ScreenQuad>
   );
 }
 
 export default function HeroCanvas() {
-  const reduced = prefersReducedMotion();
-
-  if (reduced) {
+  if (prefersReducedMotion()) {
     return (
       <div
-        className="absolute inset-0 bg-gradient-to-b from-bg via-surface to-bg"
+        className="absolute inset-0 z-0 bg-gradient-to-b from-bg via-surface to-bg"
         aria-hidden="true"
       />
     );
@@ -119,14 +122,11 @@ export default function HeroCanvas() {
 
   return (
     <Canvas
-      orthographic
-      camera={{ position: [0, 0, 1], zoom: 1 }}
       dpr={[1, 1.5]}
       gl={{ alpha: false, antialias: false, powerPreference: "low-power" }}
-      style={{ position: "absolute", inset: 0 }}
+      style={{ position: "absolute", inset: 0, zIndex: 0 }}
     >
-      <color attach="background" args={["#0a0a0b"]} />
-      <ShaderPlane />
+      <HeroShader />
     </Canvas>
   );
 }
