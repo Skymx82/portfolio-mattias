@@ -100,7 +100,7 @@ export default function HeroText() {
       </h1>
 
       <p className="hero-tagline mt-8 max-w-2xl text-lg sm:text-xl text-fg/85 leading-relaxed">
-        Developpeur fullstack 18 ans. Fondateur d&apos;
+        Developpeur fullstack 19 ans. Fondateur d&apos;
         <span className="text-accent">AutoSoft</span>, cofondateur Tolarys.
       </p>
 
