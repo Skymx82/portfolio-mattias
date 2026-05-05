@@ -74,22 +74,46 @@ export default function AutoSoft() {
           start: "top top",
           end: "+=200%",
           pin: pinRef.current,
-          scrub: 1,
+          scrub: 0.5,
           anticipatePin: 1,
+          // Snap aux centres des 4 phases stables : evite de viser pile
+          // une transition, le scroll s'arrete tout seul sur la phase la
+          // plus proche.
+          snap: {
+            snapTo: [0.1, 0.38, 0.65, 0.93],
+            duration: { min: 0.2, max: 0.55 },
+            delay: 0.05,
+            ease: "power2.inOut",
+          },
         },
       });
 
-      tl.to(".as-phase-1", { autoAlpha: 0, duration: 0.04 }, 0.18)
-        .to(".as-phase-2", { autoAlpha: 1, duration: 0.04 }, 0.22)
-        .to(".as-stat", { y: 0, autoAlpha: 1, stagger: 0.04 }, 0.24);
+      // Phase 1 stable 0 -> 0.20. Transition 0.20 -> 0.30. Phase 2 stable 0.30 -> 0.45.
+      tl.to(".as-phase-1", { autoAlpha: 0, duration: 0.1 }, 0.2)
+        .to(".as-phase-2", { autoAlpha: 1, duration: 0.1 }, 0.25)
+        .to(
+          ".as-stat",
+          { y: 0, autoAlpha: 1, stagger: 0.025, duration: 0.06 },
+          0.3,
+        );
 
-      tl.to(".as-phase-2", { autoAlpha: 0, duration: 0.04 }, 0.42)
-        .to(".as-phase-3", { autoAlpha: 1, duration: 0.04 }, 0.46)
-        .to(".as-capture", { y: 0, autoAlpha: 1, stagger: 0.05 }, 0.48);
+      // Transition 0.45 -> 0.55. Phase 3 stable 0.55 -> 0.75.
+      tl.to(".as-phase-2", { autoAlpha: 0, duration: 0.1 }, 0.45)
+        .to(".as-phase-3", { autoAlpha: 1, duration: 0.1 }, 0.5)
+        .to(
+          ".as-capture",
+          { y: 0, autoAlpha: 1, stagger: 0.03, duration: 0.06 },
+          0.55,
+        );
 
-      tl.to(".as-phase-3", { autoAlpha: 0, duration: 0.04 }, 0.78)
-        .to(".as-phase-4", { autoAlpha: 1, duration: 0.04 }, 0.82)
-        .to(".as-outro > *", { y: 0, autoAlpha: 1, stagger: 0.04 }, 0.84);
+      // Transition 0.75 -> 0.85. Phase 4 stable 0.85 -> 1.
+      tl.to(".as-phase-3", { autoAlpha: 0, duration: 0.1 }, 0.75)
+        .to(".as-phase-4", { autoAlpha: 1, duration: 0.1 }, 0.8)
+        .to(
+          ".as-outro > *",
+          { y: 0, autoAlpha: 1, stagger: 0.025, duration: 0.06 },
+          0.85,
+        );
     }, sectionRef);
 
     return () => ctx.revert();
