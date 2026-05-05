@@ -7,7 +7,10 @@ const HeroCanvas = dynamic(() => import("./HeroCanvas"), { ssr: false });
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-svh items-center overflow-hidden bg-bg">
+    <section
+      id="hero"
+      className="relative flex min-h-svh items-center overflow-hidden bg-bg"
+    >
       <div className="absolute inset-0 z-0 hidden md:block" aria-hidden="true">
         <HeroCanvas />
       </div>

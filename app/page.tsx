@@ -7,10 +7,12 @@ import E5 from "@/components/scenes/E5";
 import Veille from "@/components/scenes/Veille";
 import Perspectives from "@/components/scenes/Perspectives";
 import Contact from "@/components/scenes/Contact";
+import TransitionShaderMount from "@/components/scenes/TransitionShaderMount";
 
 export default function Home() {
   return (
     <main>
+      <TransitionShaderMount />
       <Hero />
       <AutoSoft />
       <About />
