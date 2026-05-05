@@ -66,6 +66,22 @@ body {
   }
 }
 
+html.custom-cursor-on,
+html.custom-cursor-on *,
+html.custom-cursor-on a,
+html.custom-cursor-on button {
+  cursor: none !important;
+}
+
+.cursor-ring.ring-hover {
+  width: 56px;
+  height: 56px;
+  margin-left: -12px;
+  margin-top: -12px;
+  background-color: rgb(255 77 46 / 0.12);
+  border-color: rgb(255 77 46 / 0.95);
+}
+
 @keyframes marquee-left {
   from {
     transform: translateX(0);

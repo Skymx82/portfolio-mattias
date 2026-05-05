@@ -3,6 +3,9 @@ import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import LenisProvider from "@/components/layout/LenisProvider";
 import Footer from "@/components/layout/Footer";
 import Navigation from "@/components/layout/Navigation";
+import IntroLoader from "@/components/layout/IntroLoader";
+import PageTransition from "@/components/layout/PageTransition";
+import CustomCursor from "@/components/layout/CustomCursor";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -42,6 +45,9 @@ export default function RootLayout({
       className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-bg text-fg antialiased">
+        <IntroLoader />
+        <PageTransition />
+        <CustomCursor />
         <LenisProvider>
           <Navigation />
           {children}

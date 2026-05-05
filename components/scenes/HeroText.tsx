@@ -4,6 +4,7 @@ import { Fragment, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Mail } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/ui/BrandIcons";
+import MagneticButton from "@/components/ui/MagneticButton";
 import { easings, prefersReducedMotion } from "@/lib/motion";
 
 const NAME_WORDS = ["Mattias", "Mathevon"] as const;
@@ -110,17 +111,18 @@ export default function HeroText() {
 
       <div className="mt-10 flex items-center gap-3">
         {LINKS.map(({ href, label, Icon, external }) => (
-          <a
-            key={label}
-            href={href}
-            {...(external
-              ? { target: "_blank", rel: "noopener noreferrer" }
-              : {})}
-            aria-label={label}
-            className="hero-link inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-fg/70 transition-colors duration-200 hover:border-accent hover:text-accent"
-          >
-            <Icon size={16} strokeWidth={1.5} />
-          </a>
+          <MagneticButton key={label} strength={0.4}>
+            <a
+              href={href}
+              {...(external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              aria-label={label}
+              className="hero-link inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-fg/70 transition-colors duration-200 hover:border-accent hover:text-accent"
+            >
+              <Icon size={16} strokeWidth={1.5} />
+            </a>
+          </MagneticButton>
         ))}
       </div>
     </div>

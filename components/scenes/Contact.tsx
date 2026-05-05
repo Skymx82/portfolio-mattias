@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Mail, FileDown } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/ui/BrandIcons";
+import MagneticButton from "@/components/ui/MagneticButton";
 import { easings, prefersReducedMotion } from "@/lib/motion";
 
 const TITLE_WORDS = ["Mettons-nous", "en", "contact."] as const;
@@ -107,38 +108,46 @@ export default function Contact() {
         </div>
 
         <div className="mt-16 flex flex-wrap items-center gap-3">
-          <a
-            href="/cv"
-            className="contact-cta inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-bg transition-colors hover:bg-accent/90"
-          >
-            <FileDown size={14} strokeWidth={1.5} />
-            Telecharger le CV (PDF)
-          </a>
-          <a
-            href="https://github.com/Skymx82"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-cta inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent"
-          >
-            <GitHubIcon size={14} />
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mattiasmathevon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-cta inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent"
-          >
-            <LinkedInIcon size={14} />
-            LinkedIn
-          </a>
-          <a
-            href={`mailto:${EMAIL}`}
-            className="contact-cta inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent"
-          >
-            <Mail size={14} strokeWidth={1.5} />
-            Email
-          </a>
+          <MagneticButton strength={0.25}>
+            <a
+              href="/cv"
+              className="contact-cta inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-bg transition-colors hover:bg-accent/90"
+            >
+              <FileDown size={14} strokeWidth={1.5} />
+              Telecharger le CV (PDF)
+            </a>
+          </MagneticButton>
+          <MagneticButton strength={0.25}>
+            <a
+              href="https://github.com/Skymx82"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-cta inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent"
+            >
+              <GitHubIcon size={14} />
+              GitHub
+            </a>
+          </MagneticButton>
+          <MagneticButton strength={0.25}>
+            <a
+              href="https://www.linkedin.com/in/mattiasmathevon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-cta inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent"
+            >
+              <LinkedInIcon size={14} />
+              LinkedIn
+            </a>
+          </MagneticButton>
+          <MagneticButton strength={0.25}>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="contact-cta inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent"
+            >
+              <Mail size={14} strokeWidth={1.5} />
+              Email
+            </a>
+          </MagneticButton>
         </div>
       </div>
     </section>

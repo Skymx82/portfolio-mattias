@@ -47,8 +47,6 @@ const fragmentShader = /* glsl */ `
   }
 
   void main() {
-    // gl_FragCoord est garanti par WebGL : pixel coords (0..width, 0..height).
-    // On ne depend plus de varying vUv (qui semblait casse sur le driver de Mattias).
     vec2 uv = gl_FragCoord.xy / uResolution;
     float aspect = uResolution.x / max(uResolution.y, 1.0);
     vec2 p = vec2(uv.x * aspect, uv.y);
@@ -76,7 +74,7 @@ const fragmentShader = /* glsl */ `
   }
 `;
 
-function HeroShader() {
+function ShaderPlane() {
   const matRef = useRef<THREE.ShaderMaterial>(null);
   const timeRef = useRef(0);
 
@@ -126,7 +124,7 @@ export default function HeroCanvas() {
       gl={{ alpha: false, antialias: false, powerPreference: "low-power" }}
       style={{ position: "absolute", inset: 0, zIndex: 0 }}
     >
-      <HeroShader />
+      <ShaderPlane />
     </Canvas>
   );
 }
