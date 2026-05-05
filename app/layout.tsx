@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import LenisProvider from "@/components/layout/LenisProvider";
 import Footer from "@/components/layout/Footer";
+import Navigation from "@/components/layout/Navigation";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -42,6 +43,7 @@ export default function RootLayout({
     >
       <body className="bg-bg text-fg antialiased">
         <LenisProvider>
+          <Navigation />
           {children}
           <Footer />
         </LenisProvider>
