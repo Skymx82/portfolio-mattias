@@ -6,6 +6,7 @@ import Stages from "@/components/scenes/Stages";
 import E5 from "@/components/scenes/E5";
 import Veille from "@/components/scenes/Veille";
 import Perspectives from "@/components/scenes/Perspectives";
+import Contact from "@/components/scenes/Contact";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <E5 />
       <Veille />
       <Perspectives />
+      <Contact />
     </main>
   );
 }
