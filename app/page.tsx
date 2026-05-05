@@ -3,6 +3,7 @@ import AutoSoft from "@/components/scenes/AutoSoft";
 import About from "@/components/scenes/About";
 import Projects from "@/components/scenes/Projects";
 import Stages from "@/components/scenes/Stages";
+import E5 from "@/components/scenes/E5";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Projects />
       <Stages />
+      <E5 />
     </main>
   );
 }
