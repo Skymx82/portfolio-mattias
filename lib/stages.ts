@@ -14,7 +14,70 @@ export type Stage = {
   badge?: string;
 };
 
+// Stages effectues PENDANT le BTS SIO (2024-2026).
 export const stagesBts: Stage[] = [
+  {
+    entreprise: "Odyssee Sucree",
+    poste: "Stagiaire developpeur",
+    periode: "Mai - Juin 2025",
+    duree: "6 semaines",
+    lieu: "Toulouse, France",
+    description:
+      "Creation from scratch d'une application web de gestion de stock et de comptabilite pour des marches gourmands.",
+    missions: [
+      "Authentification securisee Supabase Auth",
+      "Gestion des stocks en temps reel",
+      "Module comptable : recettes/depenses par evenement",
+      "Tableau de bord statistique et KPIs",
+    ],
+    rapport: "#",
+    icon: Building2,
+  },
+];
+
+// Activites entrepreneuriales : pas des stages, projets perso menes en
+// parallele du BTS. AutoSoft est sous statut SNEE.
+export const activitesEntrepreneuriales: Stage[] = [
+  {
+    entreprise: "AutoSoft",
+    poste: "Fondateur, developpeur full stack",
+    periode: "Mai 2025 - present",
+    duree: "1 an de dev cumule (dont 2 mois SNEE Janv-Fev 2026)",
+    lieu: "Toulouse, France et a distance",
+    description:
+      "ERP SaaS complet pour auto-ecoles, developpe de zero. En production avec 4 auto-ecoles partenaires et 30 utilisateurs actifs.",
+    missions: [
+      "Architecture multitenant Supabase RLS",
+      "Integration API ANTS (demarches permis de conduire)",
+      "Mise en conformite RGPD",
+      "Negociation partenariat avec un editeur logiciel",
+      "Integration de deux auto-ecoles partenaires en beta",
+    ],
+    rapport: "#",
+    icon: Sparkles,
+    badge: "SNEE",
+  },
+  {
+    entreprise: "Tolarys",
+    poste: "Cofondateur, developpeur web",
+    periode: "Mars 2025 - present",
+    duree: "En cours",
+    lieu: "Toulouse, France",
+    description:
+      "Agence de developpement web specialisee Next.js, Supabase et e-commerce Medusa. Cinq clients accompagnes a date.",
+    missions: [
+      "Developpement d'applications web Next.js + Supabase",
+      "Audit et mise en conformite RGAA 4.1 / EN 301 549",
+      "Apps multitenant avec donnees separees par client",
+      "Boutiques e-commerce custom Medusa.js",
+    ],
+    rapport: null,
+    icon: Building2,
+  },
+];
+
+// Stages effectues AVANT le BTS (lycee).
+export const stagesPreBts: Stage[] = [
   {
     entreprise: "Voltier Electronics",
     poste: "Stage Erasmus en informatique",
@@ -47,66 +110,6 @@ export const stagesBts: Stage[] = [
     rapport: "#",
     icon: Building2,
   },
-  {
-    entreprise: "Odyssee Sucree",
-    poste: "Stagiaire en informatique",
-    periode: "Mai - Juin 2025",
-    duree: "6 semaines",
-    lieu: "Toulouse, France",
-    description:
-      "Creation from scratch d'une application web de gestion de stock et de comptabilite pour des marches gourmands.",
-    missions: [
-      "Authentification securisee Supabase Auth",
-      "Gestion des stocks en temps reel",
-      "Module comptable : recettes/depenses par evenement",
-      "Tableau de bord statistique et KPIs",
-    ],
-    rapport: "#",
-    icon: Building2,
-  },
-];
-
-export const stagesSnee: Stage[] = [
-  {
-    entreprise: "Tolarys",
-    poste: "Cofondateur, developpeur web",
-    periode: "Mars 2025 - present",
-    duree: "En cours",
-    lieu: "Toulouse, France",
-    description:
-      "Agence de developpement web specialisee Next.js, Supabase et e-commerce Medusa. Cinq clients accompagnes.",
-    missions: [
-      "Developpement d'applications web Next.js + Supabase",
-      "Audit et mise en conformite RGAA 4.1 / EN 301 549",
-      "Apps multitenant avec donnees separees par client",
-      "Boutiques e-commerce custom Medusa.js",
-    ],
-    rapport: null,
-    icon: Building2,
-    badge: "SNEE",
-  },
-  {
-    entreprise: "AutoSoft",
-    poste: "Fondateur, developpeur full stack",
-    periode: "Janv. - Fev. 2026 (cadre SNEE)",
-    duree: "1 an de dev cumule",
-    lieu: "Toulouse, France et a distance",
-    description:
-      "ERP SaaS complet pour auto-ecoles, developpe de zero. En production avec 4 auto-ecoles partenaires.",
-    missions: [
-      "Architecture multitenant Supabase RLS",
-      "Integration API ANTS (demarches permis de conduire)",
-      "Mise en conformite RGPD (collecte et traitement)",
-      "Negociation partenariat avec un editeur logiciel (Tolarys/Prestadoss)",
-      "Integration de deux auto-ecoles partenaires en beta",
-    ],
-    rapport: "#",
-    icon: Sparkles,
-    badge: "SNEE",
-  },
-];
-
-export const stagesPreBts: Stage[] = [
   {
     entreprise: "3R - Recherches et Realisations Remy",
     poste: "Stagiaire en informatique",
