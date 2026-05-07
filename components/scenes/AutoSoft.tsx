@@ -6,16 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight } from "lucide-react";
-import OralPlan from "@/components/ui/OralPlan";
 import { isMobileViewport, prefersReducedMotion } from "@/lib/motion";
-
-const ORAL_POINTS = [
-  "ERP SaaS pour auto-ecoles",
-  "En production : 4 clients, 30 utilisateurs",
-  "1 an de dev solo",
-  "Multitenant Supabase RLS",
-  "Stripe + API ANTS + app mobile",
-];
 
 const STATS = [
   { value: "4", label: "auto-ecoles utilisatrices" },
@@ -147,7 +138,11 @@ export default function AutoSoft() {
               ERP SaaS complet pour auto-ecoles.{" "}
               <span className="text-accent">En production.</span>
             </p>
-            <OralPlan points={ORAL_POINTS} />
+            <p className="mt-3 max-w-2xl text-sm sm:text-base text-muted leading-relaxed">
+              Dashboard temps reel, planning multi-moniteurs, comptabilite,
+              paiements Stripe et application mobile dediee, sur une
+              architecture multitenant scalable.
+            </p>
           </div>
         </div>
 

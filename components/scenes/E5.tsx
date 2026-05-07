@@ -5,16 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Check, FileDown } from "lucide-react";
 import { projects } from "@/lib/projects";
-import OralPlan from "@/components/ui/OralPlan";
 import { easings, prefersReducedMotion } from "@/lib/motion";
-
-const ORAL_POINTS = [
-  "6 competences couvertes",
-  "C1 + C2 par C# et GLPI",
-  "C3 a C6 par AutoSoft et Android",
-  "Tableau de mapping complet",
-  "Dossier E5 PDF telechargeable",
-];
 
 const COMPETENCES = [
   { code: "C1", label: "Gerer le patrimoine informatique" },
@@ -93,7 +84,6 @@ export default function E5() {
           Tableau de mapping entre les six competences BTS SIO et les projets
           documentes. Chaque competence est couverte par au moins deux projets.
         </p>
-        <OralPlan points={ORAL_POINTS} />
 
         <div className="mt-16 overflow-x-auto rounded-lg border border-border bg-surface">
           <table className="w-full min-w-[640px] border-collapse">

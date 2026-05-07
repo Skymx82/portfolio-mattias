@@ -15,15 +15,7 @@ import {
   stagesPreBts,
   type Stage,
 } from "@/lib/stages";
-import OralPlan from "@/components/ui/OralPlan";
 import { easings, prefersReducedMotion } from "@/lib/motion";
-
-const ORAL_POINTS = [
-  "1 stage BTS Odyssee Sucree (6 sem)",
-  "AutoSoft fondateur SNEE",
-  "Tolarys cofondateur (5 clients)",
-  "4 stages avant BTS dont Erasmus Espagne",
-];
 
 export default function Stages() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -74,7 +66,6 @@ export default function Stages() {
           Un stage formel pendant le BTS, deux activites entrepreneuriales en
           parallele, et quatre stages avant le BTS pendant le bac.
         </p>
-        <OralPlan points={ORAL_POINTS} />
 
         {/* Bloc 1 : Stage BTS officiel */}
         <div className="stage-bloc mt-20">

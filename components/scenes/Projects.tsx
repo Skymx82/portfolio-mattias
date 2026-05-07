@@ -10,16 +10,7 @@ import {
   STATUS_LABELS,
   TOLARYS_PROJECTS,
 } from "@/lib/projects";
-import OralPlan from "@/components/ui/OralPlan";
 import { easings, prefersReducedMotion } from "@/lib/motion";
-
-const ORAL_POINTS = [
-  "3 projets BTS documentes",
-  "Android GSB Java SQLite",
-  "C# GSB .NET SQL Server",
-  "GLPI customise PHP",
-  "14 sites livres Tolarys",
-];
 
 export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -83,7 +74,6 @@ export default function Projects() {
           Trois projets BTS documentes pour le passage E6, et quatorze
           realisations livrees via Tolarys.
         </p>
-        <OralPlan points={ORAL_POINTS} />
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2">
           {btsProjects.map((project) => {
