@@ -15,7 +15,16 @@ import {
   stagesPreBts,
   type Stage,
 } from "@/lib/stages";
+import OralPlan from "@/components/ui/OralPlan";
 import { easings, prefersReducedMotion } from "@/lib/motion";
+
+const ORAL_POINTS = [
+  "18 semaines BTS valides",
+  "Voltier Erasmus Espagne",
+  "Bourdelle Toulouse",
+  "Odyssee Sucree Toulouse",
+  "2 projets SNEE en parallele",
+];
 
 export default function Stages() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -57,7 +66,7 @@ export default function Stages() {
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent">
-          04 / Parcours
+          03 / Parcours
         </p>
         <h2 className="mt-6 font-display font-semibold leading-[0.95] tracking-tight text-fg text-[clamp(2.5rem,7vw,5rem)]">
           Stages &amp; terrain.
@@ -66,6 +75,7 @@ export default function Stages() {
           Dix-huit semaines d&apos;experiences professionnelles cumulees sur le
           BTS, plus deux projets entrepreneuriaux en parallele.
         </p>
+        <OralPlan points={ORAL_POINTS} />
 
         {/* Bloc 1 : Stages BTS officiels */}
         <div className="stage-bloc mt-20">

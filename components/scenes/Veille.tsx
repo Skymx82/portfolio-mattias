@@ -5,7 +5,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
 import { veille } from "@/lib/veille";
+import OralPlan from "@/components/ui/OralPlan";
 import { easings, prefersReducedMotion } from "@/lib/motion";
+
+const ORAL_POINTS = [
+  "Sujet Claude Code dans workflow",
+  "Suivi releases Anthropic",
+  "Tests reels AutoSoft + Tolarys",
+  "4 sources Anthropic, GitHub, Willison, Twitter",
+];
 
 export default function Veille() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -43,7 +51,7 @@ export default function Veille() {
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent">
-          06 / Veille
+          07 / Veille
         </p>
         <h2 className="mt-6 font-display font-semibold leading-[0.95] tracking-tight text-fg text-[clamp(2.5rem,7vw,5rem)]">
           Veille technologique.
@@ -52,6 +60,7 @@ export default function Veille() {
           Sujet suivi en continu pendant le BTS. Plus qu&apos;une lecture
           passive : test, integration, retour terrain.
         </p>
+        <OralPlan points={ORAL_POINTS} />
 
         <div className="mt-16 grid gap-8 rounded-lg border border-border bg-surface p-8 sm:p-10 lg:grid-cols-12 lg:gap-12">
           {/* Sujet + methode */}

@@ -4,7 +4,15 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GraduationCap, Briefcase } from "lucide-react";
+import OralPlan from "@/components/ui/OralPlan";
 import { easings, prefersReducedMotion } from "@/lib/motion";
+
+const ORAL_POINTS = [
+  "L3 MIAGE UT1 rentree 2026",
+  "Formation initiale",
+  "Continuer AutoSoft + Tolarys",
+  "Independance complete post-cursus",
+];
 
 const BLOCS = [
   {
@@ -65,7 +73,7 @@ export default function Perspectives() {
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent">
-          07 / Apres
+          08 / Apres
         </p>
         <h2 className="mt-6 font-display font-semibold leading-[0.95] tracking-tight text-fg text-[clamp(2.5rem,7vw,5rem)]">
           Perspectives.
@@ -74,6 +82,7 @@ export default function Perspectives() {
           La suite est plannifiee, sans rhetorique. Universitaire d&apos;un cote,
           entrepreneuriale de l&apos;autre.
         </p>
+        <OralPlan points={ORAL_POINTS} />
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 md:gap-10">
           {BLOCS.map((bloc) => {

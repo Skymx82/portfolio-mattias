@@ -71,7 +71,7 @@ export default function Contact() {
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent">
-          08 / Contact
+          09 / Contact
         </p>
 
         <h2 className="mt-6 font-display font-semibold leading-[0.95] tracking-tight text-fg text-[clamp(2.75rem,9vw,7rem)]">

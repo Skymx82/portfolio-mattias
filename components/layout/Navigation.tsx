@@ -5,11 +5,12 @@ import Link from "next/link";
 import { Menu, X, FileText } from "lucide-react";
 
 const NAV_LINKS = [
+  { href: "#about", label: "Profil" },
+  { href: "#stages", label: "Parcours" },
   { href: "#autosoft", label: "Projet phare" },
-  { href: "#about", label: "A propos" },
   { href: "#projects", label: "Projets" },
-  { href: "#stages", label: "Stages" },
-  { href: "#e5", label: "E5" },
+  { href: "#e5", label: "Competences" },
+  { href: "#veille", label: "Veille" },
   { href: "#contact", label: "Contact" },
 ];
 

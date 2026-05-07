@@ -10,7 +10,16 @@ import {
   STATUS_LABELS,
   TOLARYS_PROJECTS,
 } from "@/lib/projects";
+import OralPlan from "@/components/ui/OralPlan";
 import { easings, prefersReducedMotion } from "@/lib/motion";
+
+const ORAL_POINTS = [
+  "3 projets BTS documentes",
+  "Android GSB Java SQLite",
+  "C# GSB .NET SQL Server",
+  "GLPI customise PHP",
+  "14 sites livres Tolarys",
+];
 
 export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -65,7 +74,7 @@ export default function Projects() {
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent">
-          03 / Projets
+          05 / Projets
         </p>
         <h2 className="mt-6 font-display font-semibold leading-[0.95] tracking-tight text-fg text-[clamp(2.5rem,7vw,5rem)]">
           Au-dela d&apos;AutoSoft.
@@ -74,6 +83,7 @@ export default function Projects() {
           Trois projets BTS documentes pour le passage E6, et quatorze
           realisations livrees via Tolarys.
         </p>
+        <OralPlan points={ORAL_POINTS} />
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2">
           {btsProjects.map((project) => {

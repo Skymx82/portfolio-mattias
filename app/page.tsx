@@ -14,10 +14,10 @@ export default function Home() {
     <main>
       <TransitionShaderMount />
       <Hero />
-      <AutoSoft />
       <About />
-      <Projects />
       <Stages />
+      <AutoSoft />
+      <Projects />
       <E5 />
       <Veille />
       <Perspectives />

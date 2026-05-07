@@ -4,7 +4,15 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import OralPlan from "@/components/ui/OralPlan";
 import { easings, prefersReducedMotion } from "@/lib/motion";
+
+const ORAL_POINTS = [
+  "BTS SIO SLAM 2e annee Toulouse",
+  "Statut SNEE UT1 Capitole",
+  "Cofondateur Tolarys + fondateur AutoSoft",
+  "L3 MIAGE rentree 2026",
+];
 
 const PARAGRAPHS = [
   "Etudiant en deuxieme annee de BTS SIO option SLAM a Toulouse. J'ai commence a coder pendant le lycee et j'ai monte mes premieres applications en parallele des etudes.",
@@ -103,6 +111,7 @@ export default function About() {
             <h2 className="mt-6 font-display font-semibold leading-[0.95] tracking-tight text-fg text-[clamp(2.5rem,7vw,5rem)]">
               A propos.
             </h2>
+            <OralPlan points={ORAL_POINTS} />
             <div className="mt-8 max-w-xl space-y-5">
               {PARAGRAPHS.map((p, i) => (
                 <p
