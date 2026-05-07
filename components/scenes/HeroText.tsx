@@ -106,7 +106,7 @@ export default function HeroText() {
       </p>
 
       <p className="hero-meta mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
-        BTS SIO SLAM &middot; Candidat E6 mai 2026 &middot; Toulouse
+        BTS SIO SLAM 2e annee &middot; Candidat E6 mai 2026 &middot; Toulouse
       </p>
 
       <div className="mt-10 flex items-center gap-3">
