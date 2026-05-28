@@ -133,13 +133,6 @@ export const projects: ProjectMeta[] = [
         url: "/projets/autosoft/files/ARCHITECTURE.pdf",
       },
       {
-        name: "Cybersecurite & RGPD",
-        description:
-          "Mesures de cybersecurite, conformite RGPD, gestion des donnees personnelles, plan RLS Supabase",
-        type: "pdf",
-        url: "/projets/autosoft/files/CYBERSECURITE.pdf",
-      },
-      {
         name: "Analyse UX et parcours",
         description:
           "Analyse des parcours utilisateurs, wireframes et logiques d'interface",
