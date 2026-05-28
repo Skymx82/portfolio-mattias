@@ -9,12 +9,7 @@ import {
   FileDown,
   MapPin,
 } from "lucide-react";
-import {
-  stagesBts,
-  activitesEntrepreneuriales,
-  stagesPreBts,
-  type Stage,
-} from "@/lib/stages";
+import { stagesBts, stagesPreBts, type Stage } from "@/lib/stages";
 import { easings, prefersReducedMotion } from "@/lib/motion";
 
 export default function Stages() {
@@ -63,43 +58,29 @@ export default function Stages() {
           Stages &amp; terrain.
         </h2>
         <p className="mt-6 max-w-xl text-base sm:text-lg text-muted leading-relaxed">
-          Un stage formel pendant le BTS, deux activites entrepreneuriales en
-          parallele, et quatre stages avant le BTS pendant le bac.
+          Deux stages pendant le BTS dont un sous statut SNEE, et quatre
+          stages avant le BTS pendant le bac.
         </p>
 
-        {/* Bloc 1 : Stage BTS officiel */}
+        {/* Bloc 1 : Stages pendant le BTS (formel + SNEE) */}
         <div className="stage-bloc mt-20">
           <BlocHeader
             kicker="Bloc 1"
-            title="Stage BTS"
+            title="Stages BTS"
             sub="Pendant le cursus 2024 - 2026"
-          />
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {stagesBts.map((s) => (
-              <StageCard key={s.entreprise} stage={s} />
-            ))}
-          </div>
-        </div>
-
-        {/* Bloc 2 : Activites entrepreneuriales (pas des stages) */}
-        <div className="stage-bloc mt-24">
-          <BlocHeader
-            kicker="Bloc 2"
-            title="Activites entrepreneuriales"
-            sub="Projets personnels en parallele du BTS"
             accent
           />
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {activitesEntrepreneuriales.map((s) => (
+            {stagesBts.map((s) => (
               <StageCard key={s.entreprise} stage={s} highlighted />
             ))}
           </div>
         </div>
 
-        {/* Bloc 3 : Stages pendant le bac (avant BTS) */}
+        {/* Bloc 2 : Stages pendant le bac (avant BTS) */}
         <div className="stage-bloc mt-24">
           <BlocHeader
-            kicker="Bloc 3"
+            kicker="Bloc 2"
             title="Avant le BTS"
             sub="Stages pendant le bac (2022 - 2024)"
           />
