@@ -74,16 +74,16 @@ export default function AutoSoft() {
           start: "top top",
           end: "+=200%",
           pin: pinRef.current,
-          scrub: 0.5,
+          scrub: 1.2,
           anticipatePin: 1,
-          // Snap aux centres des 4 phases stables : evite de viser pile
-          // une transition, le scroll s'arrete tout seul sur la phase la
-          // plus proche.
+          // Snap doux : delay long pour attendre que tu laches la molette,
+          // duration etiree pour atterrir tranquillement sur la phase,
+          // ease power3 pour mieux "attraper" la phase la plus proche.
           snap: {
             snapTo: [0.1, 0.38, 0.65, 0.93],
-            duration: { min: 0.2, max: 0.55 },
-            delay: 0.05,
-            ease: "power2.inOut",
+            duration: { min: 0.5, max: 1.2 },
+            delay: 0.25,
+            ease: "power3.inOut",
           },
         },
       });
