@@ -16,7 +16,11 @@ Bandeau : **19 ans / 2 entreprises / 5+ clients**.
 
 ---
 
-**03 Parcours (60 s)** - **1 stage BTS** Odyssee Sucree (Supabase, gestion stock). **2 activites entrepreneuriales** : AutoSoft SNEE + Tolarys cofondateur. **4 stages avant BTS**, dont **Erasmus 6 sem Espagne** chez Voltier Electronics.
+**03 Parcours (60 s)** - **2 stages BTS** :
+- Odyssee Sucree (Mai-Juin 2025, Supabase, gestion stock)
+- AutoSoft (Janv-Fev 2026, **statut SNEE**, ERP auto-ecoles)
+
+**4 stages avant BTS** dont **Erasmus 6 sem Espagne** (Voltier Electronics).
 
 ---
 

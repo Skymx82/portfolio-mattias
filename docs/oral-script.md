@@ -64,11 +64,12 @@
 
 ## 03 / Parcours - Stages (60 s)
 
-**Tu vois** : 3 blocs (Stage BTS, Activites entrepreneuriales, Avant le BTS).
+**Tu vois** : 2 blocs (Stages BTS, Avant le BTS).
 
 **Tu dis** :
-- "Cote stages, **un stage formel pendant le BTS** : Odyssee Sucree, application web de gestion de stock et comptabilite, en Supabase et Next.js."
-- "En parallele, **deux activites entrepreneuriales** : AutoSoft sous statut SNEE, et Tolarys que je cofonde depuis mars 2025."
+- "Pendant le BTS, **deux stages** :"
+  - "**Odyssee Sucree** (Mai-Juin 2025) : application web de gestion de stock et comptabilite en Supabase + Next.js."
+  - "**AutoSoft** (Janv-Fev 2026), effectue **sous statut SNEE** : 2 mois de stage entrepreneurial sur mon ERP en production. C'est mon projet phare, je le detaille juste apres."
 - "Avant le BTS, j'ai cumule **4 stages techniques pendant le bac**, dont un **stage Erasmus de 6 semaines en Espagne** chez Voltier Electronics, ou j'ai automatise des process WordPress et optimise des requetes SQL."
 
 **Tu fais** : tu scrolles vers le Projet phare. La transition shader rouge se redeclenche.
