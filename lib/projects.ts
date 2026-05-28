@@ -112,11 +112,46 @@ export const projects: ProjectMeta[] = [
         url: "/projets/autosoft/files/Autosoft.pdf",
       },
       {
+        name: "Business Plan V1",
+        description:
+          "Plan d'affaires complet : marche, modele economique, projection financiere, roadmap",
+        type: "pdf",
+        url: "/projets/autosoft/files/BUSINESS_PLAN_AUTOSOFT_V1.pdf",
+      },
+      {
         name: "Strategie d'adoption",
         description:
           "Plan de deploiement, acquisition clients et strategie de croissance",
         type: "pdf",
         url: "/projets/autosoft/files/STRATEGIE_ADOPTION_AUTOSOFT.pdf",
+      },
+      {
+        name: "Architecture technique",
+        description:
+          "Document d'architecture : stack, schema base de donnees, choix techniques, organisation des modules",
+        type: "pdf",
+        url: "/projets/autosoft/files/ARCHITECTURE.pdf",
+      },
+      {
+        name: "Cybersecurite & RGPD",
+        description:
+          "Mesures de cybersecurite, conformite RGPD, gestion des donnees personnelles, plan RLS Supabase",
+        type: "pdf",
+        url: "/projets/autosoft/files/CYBERSECURITE.pdf",
+      },
+      {
+        name: "Analyse UX et parcours",
+        description:
+          "Analyse des parcours utilisateurs, wireframes et logiques d'interface",
+        type: "pdf",
+        url: "/projets/autosoft/files/UX_ANALYSE_PARCOURS.pdf",
+      },
+      {
+        name: "Guide utilisateur complet",
+        description:
+          "Manuel utilisateur AutoSoft : prise en main, fonctionnalites detaillees, FAQ",
+        type: "pdf",
+        url: "/projets/autosoft/files/GUIDE_UTILISATEUR_AUTOSOFT.pdf",
       },
     ],
   },
