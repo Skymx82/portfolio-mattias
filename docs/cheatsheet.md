@@ -42,8 +42,9 @@ Bandeau : **19 ans / 2 entreprises / 5+ clients**.
 ---
 
 **06 Competences (60 s)** - Tableau 6 competences x 4 projets. **Chaque competence couverte par >= 2 projets**.
-- C1+C2 par C# et GLPI
-- C3 a C6 par AutoSoft et Android
+- **AutoSoft coche les 6 (C1 a C6)**, projet phare qui valide tout
+- C1+C2 aussi par C# et GLPI
+- C3 a C6 aussi par Android
 
 ---
 

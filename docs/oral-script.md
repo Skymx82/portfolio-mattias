@@ -118,7 +118,7 @@
 
 **Tu dis** :
 - "Stack technique : **Next.js, TypeScript, Supabase, PostgreSQL, Tailwind, Stripe, API ANTS**."
-- "Sur le plan E5, ce projet mobilise **4 competences BTS** : C3 (developper la presence en ligne), C4 (mode projet), C5 (service informatique), C6 (developpement professionnel)."
+- "Sur le plan E5, ce projet mobilise **les 6 competences BTS C1 a C6** : gestion du patrimoine, support incidents, presence en ligne, mode projet, service informatique, developpement professionnel. C'est le seul projet qui les couvre toutes."
 - "Le projet a sa propre page si on veut creuser l'architecture multitenant ou l'integration ANTS."
 
 **Tu fais** : tu scrolles vers les autres projets.
@@ -149,8 +149,9 @@
 **Tu dis** :
 - "Le tableau de mapping E5. Chaque ligne est une competence du referentiel BTS SIO."
 - "Regle : **chaque competence est couverte par au moins 2 projets**, ce qui valide la grille E5."
-- "**C1 et C2** (gerer le patrimoine, repondre aux incidents) : couvertes par les projets GSB en C# et GLPI."
-- "**C3 a C6** (presence en ligne, mode projet, services IT, developpement pro) : couvertes par AutoSoft et l'application Android."
+- "**AutoSoft coche les 6 competences**, c'est le projet phare qui valide tout."
+- "**C1 et C2** sont aussi couvertes par les projets GSB en C# et GLPI."
+- "**C3 a C6** sont aussi couvertes par l'application Android GSB."
 
 **Tu pointes** : les coches accent vermillon dans le tableau, ligne par ligne.
 

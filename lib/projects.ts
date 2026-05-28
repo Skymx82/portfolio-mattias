@@ -73,7 +73,7 @@ export const projects: ProjectMeta[] = [
       "Stripe",
       "REST API",
     ],
-    competences: [2, 3, 4, 5],
+    competences: [0, 1, 2, 3, 4, 5],
     status: "production",
     periode: "Mai 2025 - present (dont 2 mois SNEE Janv-Fev 2026)",
     icon: Car,

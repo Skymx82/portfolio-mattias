@@ -47,7 +47,7 @@ const TECHS = [
   "API ANTS",
 ];
 
-const COMPETENCES = ["C3", "C4", "C5", "C6"];
+const COMPETENCES = ["C1", "C2", "C3", "C4", "C5", "C6"];
 
 const PHASE_BASE = "py-24 md:py-0 md:absolute md:inset-0 md:flex md:items-center";
 
